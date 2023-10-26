@@ -5,7 +5,7 @@
   export let noteId: string | null;
   import { notesTitles } from "$lib/stores/notesTitles";
   import { onDestroy, onMount } from "svelte";
-  import { fade } from "svelte/transition";
+  import { fade, fly } from "svelte/transition";
   import Button from "../ui/button/button.svelte";
   import Input from "../ui/input/input.svelte";
   import { MagnifyingGlass } from "radix-icons-svelte";
@@ -39,7 +39,11 @@
     <p class="text-xs">{id}</p>
   </div>
 
-  <div transition:fade class="  ml-5 mt-10 w-[260px] flex flex-col gap-4">
+  <div
+    in:fade={{ duration: 1000 }}
+    out:fade={{ duration: 1 }}
+    class="  ml-5 mt-10 w-[260px] flex flex-col gap-4"
+  >
     {#each $notesTitles as note, i}
       {#if note.id === noteId}
         <Button

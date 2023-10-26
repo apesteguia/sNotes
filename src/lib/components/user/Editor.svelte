@@ -1,5 +1,6 @@
 <script lang="ts">
   export let note: any;
+  import { fade } from "svelte/transition";
 
   function formatDate(dateString: any) {
     const options = {
@@ -14,7 +15,11 @@
   }
 </script>
 
-<div class="absolute top-0 right-0 w-[calc(100%-300px)] h-full">
+<div
+  in:fade={{ duration: 1000 }}
+  out:fade={{ duration: 1 }}
+  class="absolute top-0 right-0 w-[calc(100%-300px)] h-full"
+>
   <div class="mt-5 ml-5">
     <p class="font-bold">{note.title}</p>
     <p class="text-sm">Última edición: {formatDate(note.last_edited)}</p>

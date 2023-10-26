@@ -41,9 +41,12 @@
         <Card.Title class="flex">
           <div class="flex gap">
             <p class="text-start w-[280px]">{note.title}</p>
-            <Button class="-mt-2 ml-[430px] rounded-md flex gap-2">
+            <Button
+              href={note.id}
+              class="-mt-2 ml-[430px] rounded-md flex gap-2"
+            >
               <Pencil2 className="h-4 w-4" />
-              Edit</Button
+              Open</Button
             >
           </div>
         </Card.Title>
