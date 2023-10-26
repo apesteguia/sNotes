@@ -17,7 +17,7 @@
 <div class="absolute w-full h-auto min-h-full flex items-center flex-col">
   <div class="w-[850px] text-center">
     <h1 class="mt-10 text-5xl font-bold min-h-[120px]">
-      Hola, bienvenido {user.email}
+      Hola, bienvenido {user.email?.split("@gmail.com")}
     </h1>
     <hr class="max-w[800px]" />
     {#if tableData}
