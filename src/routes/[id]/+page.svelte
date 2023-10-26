@@ -9,3 +9,8 @@
   <Navbar name={user.email} id={user.id} {data} noteId={tableData[0].id} />
   <Editor note={tableData[0]} />
 </div>
+
+<style>
+  .editor {
+  }
+</style>
